@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        div{
+            display:inline-block;
+        }
+        .success{
+            background-color:green;
+            color:white;
+            padding: 10px 20px;
+        }
+        .error{
+            background-color:red;
+            color:white;
+            padding:10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm()) 
+        {
+            <table >
+                <tr>
+                    <td>Kullanıcı Adı</td>
+                    <td>@Html.TextBox("kullaniciAdi")</td>
+                </tr>
+                <tr>
+                    <td>Parola</td>
+                    <td>@Html.Password("sifre")</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button type="submit"> Giriş Yap</button>
+                    </td>
+                </tr>
+
+            </table>
+            @Html.Raw(ViewBag.Mesaj)
+
+        }
+    </div>
+</body>
+</html>
